@@ -1,5 +1,5 @@
 :root {
-  --color-primary: #232e4d;
+  --color-primary: hsl(224, 37%, 22%);
 }
 
 *,
@@ -142,4 +142,8 @@ body {
   text-transform: uppercase;
   font-size: 1.2rem;
   font-weight: 700;
+}
+
+.cta:hover {
+  background-color: hsl(224, 37%, 12%);
 }

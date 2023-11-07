@@ -1,3 +1,7 @@
+:root {
+  --color-primary: #232e4d;
+}
+
 *,
 *::before,
 *::after {
@@ -8,7 +12,7 @@
 }
 
 html {
-  font-size: 62.5%;
+  font-size: 12px;
 }
 
 img,
@@ -17,4 +21,125 @@ svg,
 video {
   display: block;
   max-width: 100%;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  background-color: hsl(225deg 37% 32%);
+  color: var(--color-primary);
+}
+
+.snow-wrap {
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.snow,
+.snow:before,
+.snow:after {
+  position: absolute;
+  top: -650px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-image: radial-gradient(4px 4px at 100px 50px, #fff, transparent),
+    radial-gradient(6px 6px at 200px 150px, #fff, transparent),
+    radial-gradient(3px 3px at 300px 250px, #fff 50%, transparent),
+    radial-gradient(4px 4px at 400px 350px, #fff 50%, transparent),
+    radial-gradient(6px 6px at 500px 100px, #fff 50%, transparent),
+    radial-gradient(3px 3px at 50px 200px, #fff 50%, transparent),
+    radial-gradient(4px 4px at 150px 300px, #fff 50%, transparent),
+    radial-gradient(6px 6px at 250px 400px, #fff 50%, transparent),
+    radial-gradient(3px 3px at 350px 500px, #fff 50%, transparent);
+  background-size: 650px 650px;
+  animation: snow 3s linear infinite;
+  content: '';
+}
+
+.snow:after {
+  margin-left: -250px;
+  opacity: 0.5;
+  filter: blur(2px);
+  animation-duration: 6s;
+  animation-direction: reverse;
+}
+
+.snow:before {
+  margin-left: -350px;
+  opacity: 0.7;
+  filter: blur(1px);
+  animation-duration: 9s;
+  animation-direction: reverse;
+}
+
+@keyframes snow {
+  to {
+    transform: translateY(650px);
+  }
+}
+
+.main {
+  display: grid;
+  place-items: center;
+  position: fixed;
+  width: 100%;
+  min-height: 100vh;
+  top: 0;
+}
+
+.card {
+  width: 90%;
+  max-width: 400px;
+  height: 400px;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.icon {
+  width: 5rem;
+  height: fit-content;
+  fill: var(--color-primary);
+  margin-bottom: 2rem;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+}
+
+.text {
+  font-size: 1rem;
+  max-width: 45%;
+  line-height: 1.5;
+
+  margin-bottom: 1rem;
+}
+
+.discount {
+  color: #e9ad54;
+  font-size: 1.2rem;
+  margin-bottom: 3rem;
+}
+
+.cta {
+  background-color: var(--color-primary);
+  color: #fff;
+  padding: 1.5rem 5rem;
+  border-radius: 0.3rem;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  font-weight: 700;
 }
